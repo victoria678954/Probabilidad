@@ -1,0 +1,20 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+n = 10_000
+
+plt.style.use('seaborn-v0_8-darkgrid')
+
+np.random.seed(0)
+samples_exp = np.random.exponential(scale=1, size=n)
+mean_expected_exp = 1
+cumulative_mean_exp = np.cumsum(samples_exp) / np.arange(1, n + 1)
+
+plt.figure(figsize=(10, 4))
+plt.plot(cumulative_mean_exp, label='Promedio acumulado')
+plt.axhline(mean_expected_exp, color='red', linestyle='--', label='Valor esperado: 1')
+plt.title('Ley de los Grandes Números - Distribución Exponencial')
+plt.xlabel('Número de muestras')
+plt.ylabel('Promedio')
+plt.legend()
+plt.show()
