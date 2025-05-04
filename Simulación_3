@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Cantidad de muestras
 n = 10_000
 
 plt.style.use('seaborn-v0_8-darkgrid')
