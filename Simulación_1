@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Parámetros
 n_simulaciones = 10000
 resultados = np.random.randint(1, 7, size=n_simulaciones)  # Lanzamientos de dado
 promedios = np.cumsum(resultados) / np.arange(1, n_simulaciones + 1)
@@ -9,7 +8,6 @@ promedios = np.cumsum(resultados) / np.arange(1, n_simulaciones + 1)
 # Valor esperado de un dado justo: (1+2+3+4+5+6)/6 = 3.5
 valor_esperado = 3.5
 
-# Graficar
 plt.figure(figsize=(10, 5))
 plt.plot(promedios, label='Promedio acumulado')
 plt.axhline(y=valor_esperado, color='r', linestyle='--', label='Valor esperado (3.5)')
