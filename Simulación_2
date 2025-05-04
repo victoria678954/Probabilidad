@@ -1,0 +1,25 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Número de simulaciones
+n_simulaciones = 10000
+
+# Generar números aleatorios uniformes entre 0 y 1
+uniformes = np.random.uniform(0, 1, size=n_simulaciones)
+
+# Calcular promedio acumulado
+promedios_uniformes = np.cumsum(uniformes) / np.arange(1, n_simulaciones + 1)
+
+# Valor esperado de una uniforme[0,1] es 0.5
+valor_esperado_uniforme = 0.5
+
+# Gráfica
+plt.figure(figsize=(10, 5))
+plt.plot(promedios_uniformes, label='Promedio acumulado')
+plt.axhline(y=valor_esperado_uniforme, color='r', linestyle='--', label='Valor esperado (0.5)')
+plt.title('Ley de los grandes números - Distribución uniforme [0,1]')
+plt.xlabel('Número de muestras')
+plt.ylabel('Promedio acumulado')
+plt.legend()
+plt.grid(True)
+plt.show()
